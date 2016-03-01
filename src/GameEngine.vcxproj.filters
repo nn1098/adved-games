@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="PC">
+      <UniqueIdentifier>{40112c55-a013-4c9d-97ba-2d6717d552e7}</UniqueIdentifier>
+      <Extensions>pc_*</Extensions>
+    </Filter>
+    <Filter Include="PS4">
+      <UniqueIdentifier>{2fb48235-edcf-4bd9-a9f2-78516e779218}</UniqueIdentifier>
+      <Extensions>ps4_*</Extensions>
+    </Filter>
+    <Filter Include="ECM">
+      <UniqueIdentifier>{face3713-9f42-4365-b00f-1d9fab506f2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ECM\Components">
+      <UniqueIdentifier>{6f664386-cc80-4e61-a1e5-72d95e1bba69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ECM\Basic Ents">
+      <UniqueIdentifier>{71f48f33-fdb4-4519-91b2-d69c54c89c68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{d11cf43b-e3ec-4c12-86ed-32d8012f0fc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\shaders">
+      <UniqueIdentifier>{18fdb54d-6275-4823-8bd7-03fa59364c4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\shaders\ogl">
+      <UniqueIdentifier>{f8769279-01a3-470a-9f1e-2a38650f58b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\shaders\ps4">
+      <UniqueIdentifier>{329d7570-8d15-4485-9b10-99cb96823bb9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cvar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="platform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="video.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pc_video.cpp">
+      <Filter>PC</Filter>
+    </ClCompile>
+    <ClCompile Include="ps4_input.cpp">
+      <Filter>PS4</Filter>
+    </ClCompile>
+    <ClCompile Include="pc_input.cpp">
+      <Filter>PC</Filter>
+    </ClCompile>
+    <ClCompile Include="ps4_video.cpp">
+      <Filter>PS4</Filter>
+    </ClCompile>
+    <ClCompile Include="pc_renderer.cpp">
+      <Filter>PC</Filter>
+    </ClCompile>
+    <ClCompile Include="ps4_renderer.cpp">
+      <Filter>PS4</Filter>
+    </ClCompile>
+    <ClCompile Include="ps4_memory.cpp">
+      <Filter>PS4</Filter>
+    </ClCompile>
+    <ClCompile Include="ps4_platform.cpp">
+      <Filter>PS4</Filter>
+    </ClCompile>
+    <ClCompile Include="pc_platform.cpp">
+      <Filter>PC</Filter>
+    </ClCompile>
+    <ClCompile Include="Gamelogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="component_mesh_renderer.cpp">
+      <Filter>ECM\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="component_camera.cpp">
+      <Filter>ECM\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filesystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pc_shaderprogram.cpp">
+      <Filter>PC</Filter>
+    </ClCompile>
+    <ClCompile Include="ps4_shaderprogram.cpp">
+      <Filter>PS4</Filter>
+    </ClCompile>
+    <ClCompile Include="pc_font.cpp">
+      <Filter>PC</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pc_menu.cpp">
+      <Filter>PC</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="groundplane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="maths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tiny_obj_loader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="component_playerdriver.cpp">
+      <Filter>ECM\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="component_shipdriver.cpp">
+      <Filter>ECM\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="component_track.cpp">
+      <Filter>ECM\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cvar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="job_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="video.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_video.h">
+      <Filter>PC</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_input.h">
+      <Filter>PC</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_input.h">
+      <Filter>PS4</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_video.h">
+      <Filter>PS4</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_renderer.h">
+      <Filter>PC</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_renderer.h">
+      <Filter>PS4</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_memory.h">
+      <Filter>PS4</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_memory.h">
+      <Filter>PC</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_platform.h">
+      <Filter>PS4</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_platform.h">
+      <Filter>PC</Filter>
+    </ClInclude>
+    <ClInclude Include="gamelogic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="maths.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="component_mesh_renderer.h">
+      <Filter>ECM\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="filesystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="component_camera.h">
+      <Filter>ECM\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_shaderprogram.h">
+      <Filter>PC</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_shaderprogram.h">
+      <Filter>PS4</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_shader_base.h">
+      <Filter>res\shaders\ps4</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_font.h">
+      <Filter>PC</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_menu.h">
+      <Filter>PC</Filter>
+    </ClInclude>
+    <ClInclude Include="genericInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="groundplane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tiny_obj_loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_font.h">
+      <Filter>PS4</Filter>
+    </ClInclude>
+    <ClInclude Include="ps4_menu.h">
+      <Filter>PS4</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="component_shipdriver.h">
+      <Filter>ECM\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="component_player_shipdriver.h">
+      <Filter>ECM\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="component_track.h">
+      <Filter>ECM\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pc_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\res\shaders\ogl\basic.frag">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\basic.vert">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\2dfont.frag">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\2dfont.vert">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\2dmenu.vert">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\2dmenu.frag">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\grid.vert">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\grid.frag">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\simple_texture.frag">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+    <None Include="..\res\shaders\ogl\simple_texture.vert">
+      <Filter>res\shaders\ogl</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <OrbisWavePsslc Include="ps4_shader_setint_c.pssl">
+      <Filter>res\shaders\ps4</Filter>
+    </OrbisWavePsslc>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile_PSSL_To_Header Include="ps4_shader_basic_vv.pssl">
+      <Filter>res\shaders\ps4</Filter>
+    </Compile_PSSL_To_Header>
+    <Compile_PSSL_To_Header Include="ps4_shader_basic_p.pssl">
+      <Filter>res\shaders\ps4</Filter>
+    </Compile_PSSL_To_Header>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameEngine.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\cdlogo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
