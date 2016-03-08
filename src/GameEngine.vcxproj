@@ -73,9 +73,6 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\OrbisWavePsslc.props" />
-  </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -615,8 +612,6 @@ xcopy /s /y "$(SolutionDir)redist\$(Platform)\$(Configuration)\*.*" $(TargetDir)
     <Image Include="..\res\cdlogo.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <Import Project="$(SCE_ORBIS_SDK_DIR)\host_tools\msbuild\SceGnm.targets" Condition="!Exists('$(SolutionDir)\SceGnm.Development.props')" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\OrbisWavePsslc.targets" />
   </ImportGroup>
 </Project>
