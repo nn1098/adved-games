@@ -199,6 +199,7 @@ bool CommandParser::Cmd_Bind(const std::vector<std::string> &params) {
   return true;
 }
 
+//threaded input
 std::thread first;
 void CommandParser::CmdParserStart() {
 #if defined(_PLATFORM_X64) || defined(_PLATFORM_WIN32)

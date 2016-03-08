@@ -9,6 +9,7 @@ protected:
 private:
   PC_Platform() = delete;
   ~PC_Platform() = delete;
+ 
   // delete copy/move constructors & assign operators
   PC_Platform(PC_Platform const &) = delete;
   PC_Platform(PC_Platform &&) = delete;

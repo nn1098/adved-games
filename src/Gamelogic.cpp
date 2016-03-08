@@ -58,6 +58,7 @@ bool Menu_enter(const std::vector<std::string> &params) {
 bool Start_Game(const std::vector<std::string> &params) {
   LOG(logDEBUG2) << "starting game";
   inMenu = false;
+  controlselect = false;
   return true;
 }
 bool Quit_game(const std::vector<std::string> &params) {
@@ -74,13 +75,20 @@ bool Back_To_Menu(const std::vector<std::string> &params) {
   return true;
 }
 
+// get menu movement commands
 bool Controls(const std::vector<std::string> &params) {
-  for (auto &it : actual_Input_builtins) {
-    for (auto &b : it.bindings) {
-      controls += std::string(b) + ", " + std::string(it.name) + '\n';
-    }
-  }
+// loop through all availible commands  
+	for (auto &it : CommandParser::commands) {
+		// loop through command parser storage
+		for (auto &cmd : actual_Input_builtins) {
+			// get all bound commands 
+			for (auto &b : cmd.bindings){
+					controls += std::string(b) + ", " + std::string(it.name) + '\n';
+			}
+		}
+	}
 
+//controls display switch
   if (controlselect != true) {
     controlselect = true;
   } else {
@@ -89,7 +97,9 @@ bool Controls(const std::vector<std::string> &params) {
   return true;
 }
 
+// main game loop
 bool GameLogic::Run() {
+	// player and camera setup
   player = Entity();
   Components::FollowCamera cam = Components::FollowCamera();
   Components::CmMeshRenderer playermr = Components::CmMeshRenderer();
@@ -98,10 +108,10 @@ bool GameLogic::Run() {
   player.AddComponent(playermr);
   player.AddComponent(playerdr);
   playermr.SetMesh("ship1.obj");
-  // playermr.SetMesh("Ship.obj");
   Scene::SetActiveCamera(&cam);
   player.SetPosition(glm::vec3(0, 1, -8));
 
+  //box renderer
   Entity box = Entity();
   Components::CmMeshRenderer mr = Components::CmMeshRenderer();
   box.AddComponent(mr);
@@ -110,11 +120,10 @@ bool GameLogic::Run() {
   Entity box2 = Entity();
   Components::CmMeshRenderer mr2 = Components::CmMeshRenderer();
   box2.AddComponent(mr2);
-  // mr2.SetMesh("cube.obj");
   mr2.SetMesh("ship1.obj");
-  //box2.SetScale(vec3(0.005f, 0.005f, 0.005f));
   box2.SetPosition(glm::vec3(2, 0, 0));
-  /*
+ 
+  /* was track
   Entity box3 = Entity();
   Components::CmTrack mr3 = Components::CmTrack();
   box3.AddComponent(mr3);
@@ -123,12 +132,14 @@ bool GameLogic::Run() {
   box3.SetScale(glm::vec3(50.0f));
   */
 
+  // another box
   Entity box4 = Entity();
   Components::CmMeshRenderer mr4 = Components::CmMeshRenderer();
   box4.AddComponent(mr4);
   mr4.SetMesh("cube.obj");
   box4.SetPosition(glm::vec3(-2, 0, 0));
 
+  //add these to the scene
   Scene::scene_list.push_back(&player);
   Scene::scene_list.push_back(&box);
   Scene::scene_list.push_back(&box2);
@@ -160,7 +171,7 @@ bool GameLogic::Run() {
   auto helpmnuitm5 = new MenuItem("Controls", true, Controls);
   helpmnu->GetItems()->push_back(helpmnuitm5);
 
-  // input
+  // menu input commands
   CommandParser::commands.push_back({"menu_up", "", 0, Menu_up});
   CommandParser::commands.push_back({"menu_down", "", 0, Menu_down});
   CommandParser::commands.push_back({"menu_enter", "", 0, Menu_enter});
@@ -170,12 +181,13 @@ bool GameLogic::Run() {
   CommandParser::commands.push_back({"Start_Game", "", 0, Start_Game});
   CommandParser::commands.push_back({"Menu_Help", "", 0, Menu_Help});
 
-  // key bindings, route through the parser for now
+  // menu key bindings, route through the parser for now
   CommandParser::Cmd_Bind({"", "menu_up", "UP", ""});
   CommandParser::Cmd_Bind({"", "menu_down", "DOWN", ""});
   CommandParser::Cmd_Bind({"", "menu_enter", "ENTER", ""});
   CommandParser::Cmd_Bind({"", "quit", "ESC", ""});
 
+  //frametime calc
   auto t = Now();
   double frametimes[256];
   for (auto &t : frametimes) {
@@ -200,29 +212,38 @@ bool GameLogic::Run() {
       avg = "FPS:" + std::to_string((unsigned int)davg);
     }
 
+
+	//check for player input
     Input::Update();
 
+	//player rotation
     static float rot = 0;
     rot += 0.2f * deltaPercent;
-
     box.SetRotation(glm::quat_cast(rotate(rot, glm::vec3(0.3f, 0.9f, 0.5f))));
 
     // menu choice
-    if (inMenu) {
-      if (helpselect) {
-        Menu::activeMenu = helpmnu;
-        helpmnu->Update();
-      } else {
-        Menu::activeMenu = mnu;
-        mnu->Update();
-      }
-    } 
+	if (inMenu) {
+		if (helpselect) {
+			Menu::activeMenu = helpmnu;
+			helpmnu->Update();
+		}
+		else {
+			Menu::activeMenu = mnu;
+			mnu->Update();
+		}
+	}
 
+
+	//update the scene
     Scene::Update(deltaPercent);
 
+	//update the ground
     GroundPlane::Update();
+
+	//clear screen
     Renderer::PreRender();
 
+	//render the scene and ground
     Scene::Render(deltaPercent);
     GroundPlane::Render(player.GetPosition().x, player.GetPosition().z);
 
@@ -235,9 +256,10 @@ bool GameLogic::Run() {
       }
     }
 
+	//draw text
     Font::Draw(25, avg.c_str(), {100, 30}, {0.2f, 0, 0, 1.0f});
 
-    // renders in the same place as help text so stop that
+    //  speed and position overlay 
     if (helpselect == false) {
         stringstream speedstream;
 		vec3 lastpos;
@@ -256,11 +278,18 @@ bool GameLogic::Run() {
     } else {
       controls = "";
     }
+
+	//font rendering
     Font::Render();
+	//buffer handover
     Renderer::PostRender();
     Video::Swap();
   }
+
+  //unload and free memory of ground 
   GroundPlane::Shutdown();
+  
+  //end of execution
   return true;
 }
 

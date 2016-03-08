@@ -73,7 +73,7 @@ bool PC_Input::Init() {
 bool PC_Input::Update() {
   glfwPollEvents();
   if (glfwWindowShouldClose(PC_Video::GetWindow())) {
-    CommandParser::Parse("quit"); // yuck
+    CommandParser::Parse("quit"); //must parse quit command
   }
 
   for (auto &it : actual_Inputs) {

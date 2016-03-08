@@ -45,6 +45,7 @@ CmShipdriver::~CmShipdriver() {}
 void CmShipdriver::Update(double delta) {
   const auto playerspeed = glm::length(velocity_);
   // const auto playerspeedReal = glm::length(velocity_) / delta;
+ 
   // air resistance
   if (playerspeed != 0.0f) {
     acceleration_ += -0.5f * playerspeed * normalize(velocity_);
@@ -58,6 +59,7 @@ void CmShipdriver::Update(double delta) {
       velocity_.z = 0.0f;
     }
   }
+  //velocity integration
   velocity_ += acceleration_ * (float)delta;
   acceleration_ = vec3(0.0f);
   Ent_->SetPosition(Ent_->GetPosition() + velocity_);

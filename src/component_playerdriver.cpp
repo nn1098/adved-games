@@ -29,7 +29,6 @@ bool yolo(const std::vector<std::string> &params) {
 
 namespace Components {
 CmPlayerShipDriver::CmPlayerShipDriver() : CmShipdriver() {
-  // Ben, if you looking at this terrible hack, this is your fault
   pp = this;
 
   CommandParser::commands.push_back({"player_accelerate", "", 1, player_accelerate});
