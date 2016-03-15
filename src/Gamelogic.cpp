@@ -20,7 +20,11 @@
 #include <glm/gtx/transform.hpp>
 #include <iomanip>
 #include <iostream>
+#include <GL\glut.h>
 
+#pragma comment (lib,"glut32.lib")
+#pragma comment (lib,"glu32.lib")
+#pragma warning( disable : 4098;)
 // SUPER TEMP
 #include "font.h"
 bool RUNGAME;
@@ -31,6 +35,15 @@ bool inMenu;
 string controls = "";
 
 Entity player;
+
+void DrawSphere(const glm::vec3 &p0, float radius, float r, float g, float b) {
+  glPushMatrix();
+  glColor3f(r, g, b);
+  glTranslatef(p0.x, p0.y, p0.z);
+  glutSolidSphere(radius, 10, 9);
+  glPopMatrix();
+	}
+
 
 bool GameLogic::Init() {
   GroundPlane::Init();
@@ -131,6 +144,8 @@ bool GameLogic::Run() {
   box3.SetPosition(glm::vec3(0, 0.1f, 0));
   box3.SetScale(glm::vec3(50.0f));
   */
+
+
 
   // another box
   Entity box4 = Entity();
@@ -255,6 +270,9 @@ bool GameLogic::Run() {
         mnu->Render();
       }
     }
+	
+
+	DrawSphere(glm::vec3(0,0,0),3.0f,1.0f,0,0);
 
 	//draw text
     Font::Draw(25, avg.c_str(), {100, 30}, {0.2f, 0, 0, 1.0f});
@@ -281,8 +299,10 @@ bool GameLogic::Run() {
 
 	//font rendering
     Font::Render();
+
 	//buffer handover
     Renderer::PostRender();
+
     Video::Swap();
   }
 
